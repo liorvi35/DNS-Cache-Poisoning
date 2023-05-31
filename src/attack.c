@@ -81,8 +81,8 @@ void send_dns_response(unsigned char *packet, int packet_size, unsigned char *bu
     memcpy(packet+41, buff2, 5);
     memcpy(packet+64, buff2, 5);
 
-    unsigned short transaction_id = htons(num);
-    memcpy(packet+28, (void*)&transaction_id, 2);
+    unsigned short txid = htons(num);
+    memcpy(packet+28, (void*)&txid, 2);
     send_raw_packet(packet, packet_size);
 }
 
