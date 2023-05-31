@@ -67,7 +67,6 @@ int main()
 }
 
 
-// Use for generating and sending fake DNS request
 void send_dns_request(unsigned char *packet, int packet_size, char *buff)
 {
     memcpy(packet+41, buff, 5);
@@ -75,7 +74,6 @@ void send_dns_request(unsigned char *packet, int packet_size, char *buff)
 }
 
 
-// Use for generating and sending forged DNS response
 void send_dns_response(unsigned char *packet, int packet_size, unsigned char *buff, char *buff2, unsigned short num)
 {
     int ip = (int)inet_addr(buff);
